@@ -1,0 +1,38 @@
+<div class="login-container">
+  <h2>Login</h2>
+
+  <p class="info" role="status">{{ mensagemStatus }}</p>
+
+  <p class="dica">
+    <strong>Demonstração:</strong> use
+    <code>admin&#64;email.com</code>
+    e senha
+    <code>123456</code>
+    — para estudo; em produção viria de um backend seguro.
+  </p>
+
+    @if (loginService.isAuthenticated()) {
+      <p class="sessao-ativa">
+        <a routerLink="/dashboard">Ir para o painel</a>
+        (há um usuário salvo no <code>localStorage</code>).
+      </p>
+    }
+
+    <form (ngSubmit)="onSubmit()" #loginForm="ngForm">
+    <div class="campo">
+      <label for="email">E-mail</label>
+      <input id="email" name="email" type="email" [(ngModel)]="email" required/>
+    </div>
+
+    <div class="campo">
+      <label for="senha">Senha</label>
+      <input id="senha" name="senha" type="password" [(ngModel)]="senha" required/>
+    </div>
+
+    @if (erro) {
+      <p class="erro" role="alert">Credenciais inválidas para esta simulação.</p>
+    }
+
+    <button type="submit" [disabled]="loginForm.invalid">Entrar</button>
+  </form>
+</div>

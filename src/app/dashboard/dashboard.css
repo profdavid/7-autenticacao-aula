@@ -1,0 +1,49 @@
+.painel {
+  max-width: 36rem;
+  margin: 2rem auto;
+  padding: 1.75rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background: #fafafa;
+  font-family: system-ui, sans-serif;
+}
+
+h1 {
+  margin: 0 0 1rem;
+  font-size: 1.35rem;
+}
+
+.info {
+  margin: 0 0 1rem;
+  padding: 0.65rem 0.75rem;
+  border-radius: 6px;
+  border: 1px solid #73a8ff;
+  background: #eef5ff;
+  color: #1d4e89;
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
+
+.explicacao {
+  margin: 0 0 0.75rem;
+}
+
+.links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+button {
+  margin-top: 0.5rem;
+  padding: 0.55rem 1.25rem;
+  border-radius: 4px;
+  border: 1px solid #666;
+  background: #fff;
+  cursor: pointer;
+}
+
+code {
+  font-size: 0.9em;
+}

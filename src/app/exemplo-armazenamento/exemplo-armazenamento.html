@@ -1,0 +1,56 @@
+<section class="pagina">
+  <h1>Armazenamento no navegador</h1>
+  
+  <div class="colunas">
+    <div class="card">
+      <h2 id="titulo-local">localStorage</h2>
+      <p class="ajuda">
+        Persiste mesmo depois de fechar o navegador (até limpeza manual ou
+        <code>removeItem</code> / <code>clear</code>).
+      </p>
+
+      <label class="campo">
+        <span>Texto a salvar</span>
+        <input type="text" [(ngModel)]="textoParaSalvarLocal" placeholder="Ex.: meu apelido" />
+      </label>
+
+      <div class="acoes">
+        <button type="button" (click)="salvarLocal()">Salvar</button>
+        <button type="button" (click)="recuperarLocal()">Recuperar</button>
+        <button type="button" class="secundario" (click)="limparLocal()">Limpar chave</button>
+      </div>
+
+      <p class="mensagem" [class.visivel]="mensagemLocal">{{ mensagemLocal }}</p>
+
+      <p class="resultado">
+        <span class="rotulo">Última leitura:</span>
+        <output>{{ lidoDoLocal }}</output>
+      </p>
+    </div>
+
+    <div class="card">
+      <h2 id="titulo-sessao">sessionStorage</h2>
+      <p class="ajuda">
+        Vale só para esta aba. Ao fechar a aba, os dados desta origem neste storage somem.
+      </p>
+
+      <label class="campo">
+        <span>Texto a salvar</span>
+        <input type="text" [(ngModel)]="textoParaSalvarSessao" placeholder="Ex.: rascunho temporário" />
+      </label>
+
+      <div class="acoes">
+        <button type="button" (click)="salvarSessao()">Salvar</button>
+        <button type="button" (click)="recuperarSessao()">Recuperar</button>
+        <button type="button" class="secundario" (click)="limparSessao()">Limpar chave</button>
+      </div>
+
+      <p class="mensagem" [class.visivel]="mensagemSessao">{{ mensagemSessao }}</p>
+
+      <p class="resultado">
+        <span class="rotulo">Última leitura:</span>
+        <output>{{ lidoDaSessao }}</output>
+      </p>
+    </div>
+  </div>
+</section>

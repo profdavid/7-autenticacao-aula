@@ -1,0 +1,25 @@
+<section class="painel">
+  <h1>Painel (dashboard)</h1>
+
+  <p class="info" role="status">{{ mensagemStatus }}</p>
+
+  @if (usuario) {
+    <p>
+      Usuário logado (valor em <code>localStorage</code>):
+      <strong>{{ usuario }}</strong>
+    </p>
+  }
+
+  <p class="explicacao">
+    Nesta seção você pode testar os guards:
+    <code>canActivate</code>, <code>canActivateChild</code> e <code>canDeactivate</code>.
+  </p>
+
+  <nav class="links">
+    <a routerLink="/guard-demo">Demo canActivateChild</a>
+    <a routerLink="/form-edicao">Demo canDeactivate</a>
+    <a routerLink="/armazenamento">Exemplo de storage</a>
+  </nav>
+
+  <button type="button" (click)="logout()">Sair (logout)</button>
+</section>

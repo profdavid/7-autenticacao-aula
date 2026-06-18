@@ -1,0 +1,10 @@
+.filho-card {
+  padding: 0.9rem 1rem;
+  border-radius: 6px;
+  border: 1px dashed #7f7f7f;
+  background: #fff;
+}
+
+.filho-card h3 {
+  margin: 0 0 0.35rem;
+}

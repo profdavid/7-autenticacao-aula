@@ -1,0 +1,30 @@
+<section class="form-area">
+  <h2>Exemplo de canDeactivate</h2>
+  <p class="info">{{ mensagem }}</p>
+
+  <label>
+    Nome
+    <input
+      type="text"
+      [(ngModel)]="nome"
+      (ngModelChange)="onInputChange()"
+      placeholder="Ex.: Maria"
+    />
+  </label>
+
+  <label>
+    Observação
+    <textarea
+      [(ngModel)]="observacao"
+      (ngModelChange)="onInputChange()"
+      rows="3"
+      placeholder="Escreva qualquer texto para simular alteração"
+    ></textarea>
+  </label>
+
+  <div class="acoes">
+    <button type="button" (click)="salvar()">Salvar</button>
+    <a routerLink="/dashboard">Ir para dashboard</a>
+    <a routerLink="/guard-demo/filho-a">Ir para rota filha protegida</a>
+  </div>
+</section>

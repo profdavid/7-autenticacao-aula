@@ -1,0 +1,43 @@
+.form-area {
+  max-width: 40rem;
+  margin: 2rem auto;
+  padding: 1.25rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background: #fafafa;
+  font-family: system-ui, sans-serif;
+}
+
+.info {
+  margin: 0 0 1rem;
+  padding: 0.65rem 0.75rem;
+  border-radius: 6px;
+  border: 1px solid #73a8ff;
+  background: #eef5ff;
+  color: #1d4e89;
+}
+
+label {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  margin-bottom: 0.85rem;
+}
+
+input,
+textarea {
+  border: 1px solid #bbb;
+  border-radius: 4px;
+  padding: 0.5rem 0.6rem;
+  font-family: inherit;
+}
+
+.acoes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.7rem;
+}
+
+button {
+  padding: 0.5rem 1rem;
+}

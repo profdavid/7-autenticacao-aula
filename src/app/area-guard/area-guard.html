@@ -1,0 +1,15 @@
+<section class="guard-area">
+  <h2>Exemplo de canActivateChild</h2>
+  <p class="info">
+    Esta área possui rotas filhas protegidas por <code>canActivateChild</code>.
+    Sempre que navegar para uma filha, o guard será executado.
+  </p>
+
+  <nav class="links">
+    <a routerLink="filho-a">Abrir filho A</a>
+    <a routerLink="filho-b">Abrir filho B</a>
+    <a routerLink="/dashboard">Voltar ao dashboard</a>
+  </nav>
+
+  <router-outlet />
+</section>
