@@ -19,9 +19,9 @@ export const routes: Routes = [
     canActivate: [authActivateGuard],
     // canActivateChild: [authChildaGuard],
     children: [
-      { path: '', pathMatch: 'full', redirectTo: 'filho-b' },
-      { path: 'filho-a', component: AreaGuardChild, data: { titulo: 'Rota filha A' }, canActivateChild: [authChildaGuard] },
-      { path: 'filho-b', component: AreaGuardChild, data: { titulo: 'Rota filha B' } },
+      { path: '', pathMatch: 'full', redirectTo: 'filho-a' },
+      { path: 'filho-a', component: AreaGuardChild, data: { titulo: 'Rota filha A' }, canActivate: [authActivateGuard] },
+      { path: 'filho-b', component: AreaGuardChild, data: { titulo: 'Rota filha B' }, canActivate: [authChildaGuard], },
     ],
   },/**/
   /**/{
