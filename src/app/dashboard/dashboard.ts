@@ -21,10 +21,13 @@ export class Dashboard implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    
+    if(!this.loginService.isAuthenticated()){
+      void this.router.navigate(['/login']);
+    }
   }
 
   logout(): void {
+    this.loginService.logout();
     void this.router.navigate(['/login']);
   }
 }

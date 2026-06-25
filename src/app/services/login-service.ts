@@ -13,21 +13,30 @@ export class LoginService {
    * Em um app real, você chamaria uma API e guardaria um token JWT, etc.
    */
   login(email: string, senha: string): boolean {
-    return true;
+    if((email == 'admin@email.com' || email == 'filhoa@email.com') && senha == '123456'){
+      localStorage.setItem(this.STORAGE_KEY, email);
+      return true;
+    }
+
+    return false;
   }
 
   /** Remove o registro de usuário do navegador (logout local). */
   logout(): void {
-    
+    localStorage.removeItem(this.STORAGE_KEY);
   }
 
   /** `true` se existir valor salvo na chave `usuario`. */
   isAuthenticated(): boolean {
-    return false;
+    return (localStorage.getItem(this.STORAGE_KEY) !== null);
+  }
+
+  isAuthenticatedFilhoA(): boolean {
+    return (localStorage.getItem(this.STORAGE_KEY) !== null && localStorage.getItem(this.STORAGE_KEY) === 'filhoa@email.com');
   }
 
   /** E-mail salvo após login bem-sucedido, ou `null` se não houver sessão local. */
   getUsuario(): string | null {
-    return null;
+    return localStorage.getItem(this.STORAGE_KEY);
   }
 }

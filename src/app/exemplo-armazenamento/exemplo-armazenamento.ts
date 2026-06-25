@@ -23,28 +23,38 @@ export class ExemploArmazenamento {
 
   /** Grava string em localStorage. Só aceita strings; objetos use JSON.stringify. */
   salvarLocal(): void {
-    
+    localStorage.setItem(this.chaveLocal, this.textoParaSalvarLocal);
+    this.mensagemLocal = 'Dados salvos com sucesso no localStorage.';
   }
 
   /** Lê string de localStorage. Retorna null se a chave não existir. */
   recuperarLocal(): void {
-    
+    const valor = localStorage.getItem(this.chaveLocal);
+    this.lidoDoLocal = (valor === null) ? '(nada salvo nessa chave)' : valor;
+    this.mensagemLocal = (valor === null) ? 'Nenhum valor encontrado nesta chave do localStorage.' : 'Valor recuperado do localStorage.';
   }
 
   /** Remove só esta chave do localStorage. */
   limparLocal(): void {
-    
+    localStorage.removeItem(this.chaveLocal);
+    this.lidoDoLocal = '(chave removida)';
+    this.mensagemLocal = 'Chave removida do localStorade.';
   }
 
   salvarSessao(): void {
-    
+    sessionStorage.setItem(this.chaveSessao, this.textoParaSalvarSessao);
+    this.mensagemSessao = 'Dados salvos com sucesso no sessionStorage.';
   }
 
   recuperarSessao(): void {
-    
+    const valor = sessionStorage.getItem(this.chaveSessao);
+    this.lidoDaSessao = (valor === null) ? '(nada salvo nessa chave)' : valor;
+    this.mensagemSessao = (valor === null) ? 'Nenhum valor encontrado nesta chave do sessionStorage.' : 'Valor recuperado do sessionStorage.';
   }
 
   limparSessao(): void {
-    
+    sessionStorage.removeItem(this.chaveSessao);
+    this.lidoDaSessao = '(chave removida)';
+    this.mensagemSessao = 'Chave removida do sessionStorade.';
   }
 }

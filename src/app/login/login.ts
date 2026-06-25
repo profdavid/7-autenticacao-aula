@@ -21,10 +21,18 @@ export class Login implements OnInit {
   readonly router = inject(Router);
 
   ngOnInit(): void {
-    
+    if(this.loginService.isAuthenticated()){
+      this.mensagemStatus = 'Você já está autenticado, usuário: '+this.email;
+    }
   }
 
   onSubmit(): void {
-    this.router.navigate(['/dashboard']);
+    if(this.loginService.login(this.email, this.senha)){
+      this.router.navigate(['/dashboard']);
+    }
+    else{
+      this.erro = true;
+      this.mensagemStatus = 'Dados de login não encontrados.';
+    }
   }
 }
